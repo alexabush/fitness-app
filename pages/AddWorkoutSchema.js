@@ -9,7 +9,7 @@ export default function AddWorkoutSchema() {
       max={null}
       equipment={'Nice Equipment'}
       variations={['Variation 1', 'Variation 2']}
-      nextScreen={'/fitness'}
+      nextScreen={'/'}
     />
   );
 }
