@@ -19,17 +19,24 @@ export default class ExerciseCard extends React.PureComponent {
   render() {
     const { exerciseName, exerciseWeight, equipment, variations } = this.props;
     return (
-      <SFCard>
-        <ExerciseCardHeader
-          exerciseName={exerciseName}
-          equipment={equipment}
-          variations={variations}
-          onClick={this.toggleExpand}
-          withChiclets
-        />
-        {this.state.isExpanded && <ExtraWorkoutInfo />}
-        <ExerciseCardFooter exerciseWeight={exerciseWeight} />
-      </SFCard>
+      <div className="exercise-card">
+        <SFCard>
+          <ExerciseCardHeader
+            exerciseName={exerciseName}
+            equipment={equipment}
+            variations={variations}
+            onClick={this.toggleExpand}
+            withChiclets
+          />
+          {this.state.isExpanded && <ExtraWorkoutInfo />}
+          <ExerciseCardFooter exerciseWeight={exerciseWeight} />
+        </SFCard>
+        <style jsx>{`
+          .exercise-card {
+            max-width: 600px;
+          }
+        `}</style>
+      </div>
     );
   }
 }
